@@ -1,0 +1,241 @@
+:root {
+    --background-color: #131313;
+    --principal-color: #fff;
+    --secondary-color: #bebebe;
+    --typography-h1: 40px;
+    --typography-h2: 32px;
+    --typography-h3-a: 14px;
+    --typography-p: 13.6px;
+}
+
+/* FOR-ALL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", sans-serif;
+    text-decoration: none;
+    list-style: none; 
+}
+
+/* GENERAL */
+
+body {
+    background-color: var(--background-color);
+}
+
+h1 {
+    font-size: var(--typography-h1);
+    color: var(--principal-color);
+    text-transform: uppercase;
+}
+
+a, li {
+    font-size: var(--typography-h3-a);
+    color: var(--principal-color);
+    text-transform: uppercase;
+}
+
+
+/* HEADER */
+header {
+    width: 100%;
+    height: 14vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-nav > ul {
+    display: flex;
+    gap: 1.3rem;
+}
+
+.main-nav > ul > li > a:hover {
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+/* IMAGEN PRINCIPAL */
+.main-image {
+    height: 63vh;
+    overflow: hidden;
+}
+
+.main-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: UpImage 3s;
+}
+
+@keyframes UpImage {
+        0% {
+          transform: scale(1.4);
+        }
+      
+        100% {
+          transform: scale(1);
+        }
+}
+
+/* SECCION DE VENTA */
+.main--featured_items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3rem;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: var(--principal-color);
+    font-size: var(--typography-h1);
+    margin-top: 3px;
+    margin-bottom: 1rem;
+    font-size: 38px;
+}
+
+.main--featured_items > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
+  list-style-type: none;
+  text-align: center;  
+}
+ 
+.main--featured_items > ul > li > img {
+    width: 100%;
+}
+
+.main--featured_items ul > li > p {
+    margin-top: 20px;
+    color: var(--secondary-color);
+}
+
+/* VIDEO */
+.container-video {
+    height: 45vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .container-video > div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.play-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 110px;
+    height: 40px;
+    font-size: var(--typography-p);
+    color: var(--principal-color);
+    border: 2px solid white;
+}
+
+/* EMAIL */
+.form-section {
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/assets/imágenes/background.webp);
+    object-fit: cover;
+    color: var(--principal-color);
+    gap: 2rem;
+}
+
+.form-section > h3 {
+    text-transform: uppercase;
+}
+
+input {
+    color: var(--principal-color);
+    width: 220px;
+    height: 37px;
+    background-color: var(--background-color);
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+input:hover {
+    border-bottom: 2px solid cadetblue;
+}
+
+span > img {
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 580px) {
+    .main-nav > ul  {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .main-nav > ul > li > a {
+        font-size: 12px;
+    }
+    .main-nav > ul > li > a:hover {
+        border-bottom: none;
+        color: darkmagenta;
+    }
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 704px) {
+    .container-video > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container-video > div > h2 {
+        font-size: 25px;
+    }
+    .play-button {
+        width: 90px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 444px) {
+    h2 {
+     text-align: center;
+     font-size: 30px;
+    }
+}
+ 
+@media screen and (max-width: 380px) {
+     h2 {
+      text-align: center;
+      font-size: 30px;
+     }
+     .main--featured_items > ul {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+     }
+}
+
+@media screen and (max-width:290px) {
+    .main-nav > ul {
+        display: none;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }    
+}
